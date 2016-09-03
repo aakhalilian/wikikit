@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  </head>
+  <body>
+  	<div style="padding:5px;background-color:#efefef">
+  		<img src="http://miraclelab.co/resources/download/images/miracleLab-logo.png" style="width:140px">
+  	</div>
+  	<div style="padding:15px;background-color:#fff">
+	  	<h3>Thanks for your email! </h3>
+	  	<p>We got the following message from you:</p><br>
+		<p>$message</p><br>
+		<p>We will send the response (if any) to <u>$email.</u>
+		</p>
+	</div>
+  </body>
+</html>

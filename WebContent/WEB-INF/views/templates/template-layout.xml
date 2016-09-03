@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout-map>
+	<web-link location="master.footer" order="525" blank="false">
+		<link>microsoft.com</link>
+		<title>link to Microsoft</title>
+		<label>Microsoft</label>
+	</web-link>
+	<web-panel location="somsseLoc" order="1000">
+		<template>asdasd/asd/b.vm</template>
+	</web-panel>
+</layout-map>

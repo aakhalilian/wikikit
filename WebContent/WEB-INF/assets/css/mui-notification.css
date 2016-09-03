@@ -1,0 +1,35 @@
+.mui-notifications {
+	width: 320px;
+	position: absolute;
+	z-index: 5000;
+	top: 60px;
+	right: 0px;
+	padding-right: 40px;
+	padding-bottom: 20px;
+	padding-top: 10px;
+	overflow: hidden;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Chrome/Safari/Opera */
+	-khtml-user-select: none;    /* Konqueror */
+	-moz-user-select: none;      /* Firefox */
+	-ms-user-select: none;       /* Internet Explorer/Edge */
+	user-select: none;
+}
+
+.mui-notifications div.panel {
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.15);
+}
+
+.mui-notifications div.panel div.panel-body {
+	max-height: 300px;
+	-webkit-touch-callout: all; /* iOS Safari */
+	-webkit-user-select: all;   /* Chrome/Safari/Opera */
+	-khtml-user-select: all;    /* Konqueror */
+	-moz-user-select: all;      /* Firefox */
+	-ms-user-select: all;       /* Internet Explorer/Edge */
+	user-select: all;
+}
+.mui-notifications i {
+	margin-right: 5px;
+	margin-bottom: 1px;
+}
