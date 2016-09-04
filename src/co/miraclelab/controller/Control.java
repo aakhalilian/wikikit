@@ -26,6 +26,7 @@ public class Control extends MainControl{
 			LayoutService layoutService, HttpServletRequest request, HttpServletResponse response) {
 		super(properties, servletContext, logService, encryptService, xmlService, mailService, mongoService, layoutService,
 				request, response);
+		mailService.initMailService();
 	}
 	
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET) 
