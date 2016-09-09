@@ -3,7 +3,6 @@ package co.miraclelab.wikikit.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import co.miraclelab.webframe.model.UserInfo;
 @Document
 public class User {
 	@Id

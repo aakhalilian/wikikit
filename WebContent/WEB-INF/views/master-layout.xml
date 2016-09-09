@@ -5,35 +5,10 @@
 		<template>fragments/_navbar.vm</template>
 		<label>Navbar</label>
 	</web-panel>
-	<!--<web-panel location="master.top.navbar.right" section="agile" order="1000">
-		<template>fragments/_dropdown.vm</template>
-		<label>Agile</label> 
-	</web-panel> -->
+	
 	<web-panel location="master.bottom" order="1000">
 		<template>fragments/_footer.vm</template>
 		<label>Footer</label>
 	</web-panel>
-	
-	<web-link location="master.top.navbar.right.agile" order="525" blank="false">
-		<link>#</link>
-		<label>Miracle Agile</label>
-	</web-link>
-	
-	<web-link location="master.top.navbar.right.agile" order="525" blank="false">
-		<link>#</link>
-		<label>Miracle Tools</label>
-	</web-link>	
-	
-	<web-link location="master.top.navbar.right" order="1000" blank="false">
-		<link>about</link>
-		<title>About Miracle Lab</title>
-		<label>About us</label>
-	</web-link>
-	
-	<web-link location="master.top.navbar.right" order="1" blank="false">
-		<link>contact</link>
-		<title>Contact Miracle Lab</title>
-		<label>Contact us</label>
-	</web-link>
 	
 </layout-map>
