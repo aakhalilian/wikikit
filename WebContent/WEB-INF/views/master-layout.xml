@@ -11,4 +11,12 @@
 		<label>Footer</label>
 	</web-panel>
 	
+	
+	
+	<web-link location="master.top.navbar.right" order="1" blank="false">
+		<link>contactzzz</link>
+		<title>Contact Miracle Lab</title>
+		<label>Contact uszzz</label>
+	</web-link>
+	
 </layout-map>
