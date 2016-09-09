@@ -19,17 +19,13 @@
   </head>
   <body>
 	$layoutService.in("master.top")
-	#foreach($myPanel in $layoutService.getPanels())
-		#parse($myPanel.path())
-	#end
+	$layoutService.renderPanels()
 	$layoutService.up(2)
 	
   	$screen_content
   	
 	$layoutService.in("master.bottom")
-	#foreach($myPanel in $layoutService.getPanels())
-		#parse($myPanel.path())
-	#end
+	$layoutService.renderPanels()
 	$layoutService.up(2)
 	
   </body>

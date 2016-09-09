@@ -3,9 +3,7 @@
 	  role="button" aria-haspopup="true" aria-expanded="false">$myPanel.getLabel() <span class="caret"></span></a>
 	  <ul class="dropdown-menu">
 	  	$layoutService.in($myPanel.getSection())
-			#foreach($myLink in $layoutService.getLinks())
-				<li><a href="$myLink.getHref()">$myLink.getLabel()</a></li>
-			#end
+		$layoutService.renderLinks("<li>?</li>")
 		$layoutService.up($myPanel.getSection())
 	  </ul>
 </li>

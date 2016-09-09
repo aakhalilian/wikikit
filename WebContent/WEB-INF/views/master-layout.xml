@@ -24,13 +24,13 @@
 		<label>Miracle Tools</label>
 	</web-link>	
 	
-	<web-link location="master.top.navbar.right" order="525" blank="false">
+	<web-link location="master.top.navbar.right" order="1000" blank="false">
 		<link>about</link>
 		<title>About Miracle Lab</title>
 		<label>About us</label>
 	</web-link>
 	
-	<web-link location="master.top.navbar.right" order="525" blank="false">
+	<web-link location="master.top.navbar.right" order="1" blank="false">
 		<link>contact</link>
 		<title>Contact Miracle Lab</title>
 		<label>Contact us</label>
