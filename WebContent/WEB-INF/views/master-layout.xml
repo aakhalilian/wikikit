@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <layout-map>
-	
+
 	<web-panel location="master.top" order="1000">
 		<template>fragments/_navbar.vm</template>
 		<label>Navbar</label>
 	</web-panel>
-	
+
 	<web-panel location="master.bottom" order="1000">
 		<template>fragments/_footer.vm</template>
 		<label>Footer</label>
 	</web-panel>
-	
-	
-	
-	<web-link location="master.top.navbar.right" order="1" blank="false">
-		<link>contactzzz</link>
-		<title>Contact Miracle Lab</title>
-		<label>Contact uszzz</label>
-	</web-link>
 	
 </layout-map>
