@@ -22,7 +22,7 @@
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
-		<property name="cache" value="false" />
+		<property name="cache" value="true" />
 		<property name="prefix" value="/WEB-INF/views/templates/" />
 		<property name="layoutUrl" value="/WEB-INF/views/master.vm" />
 		<property name="suffix" value=".vm" />
