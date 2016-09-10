@@ -11,7 +11,7 @@
 		<label>Footer</label>
 	</web-panel>
 	
-	<web-link location="master.top" order="1000">
+	<web-link location="master.top.navbar.right" order="1000">
 		<label>Login</label>
 		<link>login</link>
 	</web-link>
