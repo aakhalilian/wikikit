@@ -40,8 +40,15 @@ public class Control extends MainControl{
 	@RequestMapping(value = { "/main" }, method = RequestMethod.GET)
 	public String welcomePage(Model model) throws IOException {
 		ServiceAccessor.modelDispatch(model);
-		model.addAttribute("pageTitle","Miracle Lab Main"); 
+		model.addAttribute("pageTitle","Miracle Lab wiki Main"); 
 		return "main";
+	}
+	
+	@RequestMapping(value = { "/login" }, method = RequestMethod.GET)
+	public String loginPage(Model model) throws IOException {
+		ServiceAccessor.modelDispatch(model);
+		model.addAttribute("pageTitle","Login to"); 
+		return "login";
 	}
 
 }

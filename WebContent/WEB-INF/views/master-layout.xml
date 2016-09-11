@@ -5,6 +5,11 @@
 		<template>fragments/_navbar.vm</template>
 		<label>Navbar</label>
 	</web-panel>
+	
+	<web-panel location="login" order="1000">
+		<template>fragments/_loginPanel.vm</template>
+		<label>login</label>
+	</web-panel>
 
 	<web-panel location="master.bottom" order="1000">
 		<template>fragments/_footer.vm</template>

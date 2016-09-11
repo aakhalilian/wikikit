@@ -1,0 +1,11 @@
+<div class="container">
+	<div class="WH wh-19"></div>
+	<div class="row">
+		<div class="col-md-6">
+			$layoutService.in("login")
+			$layoutService.renderPanels()
+			$layoutService.up(1)
+		</div>
+	</div>
+	<div class="WH wh-19"></div>
+</div>
