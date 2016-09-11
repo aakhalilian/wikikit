@@ -22,4 +22,14 @@
 		<condition>co.miraclelab.wikikit.condition.UserisNotLoggedIn</condition>
 	</web-link>
 	
+	<web-panel location="master.top.navbar.right" section="user.section" order="1000">
+		<template>fragments/_userSection.vm</template>
+		<context-provider>co.miraclelab.wikikit.contextProvider.UserSection</context-provider>
+	</web-panel>
+	
+	<web-link location="master.top.navbar.right.user.section" order="1000">
+		<label>Logout</label>
+		<link>logout</link>
+	</web-link>
+	
 </layout-map>
