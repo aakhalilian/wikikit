@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="WH wh-19"></div>
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-6 col-md-offset-3">
 			$layoutService.in("login")
 			$layoutService.renderPanels()
 			$layoutService.up(1)

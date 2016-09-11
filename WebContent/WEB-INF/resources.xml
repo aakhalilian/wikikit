@@ -27,8 +27,8 @@
 		<resource type="css" location="css/mui-notification.css"/>
 	</web-resource>
 	
-	<web-resource key="custom-js" context="master">
-		<resource type="js" location="js/custom.js"/>
+	<web-resource key="contact-js" context="master">
+		<resource type="js" location="js/contact.js"/>
 	</web-resource>
 	
 </web-resource-service>
