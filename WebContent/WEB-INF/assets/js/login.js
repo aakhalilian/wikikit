@@ -11,13 +11,10 @@ $(document).ready(function(){
 		        },
 		        function(status){
 		            if(status=="success"){
-		            	$('form#login-form').trigger("reset");
-		            	throwSuccess("Message Has been Sent!","<p>We will send you an email to confirm that we recieved your message!</p>");
-		            	button.prop("disabled",false);
-		        		button.parent().children('i').fadeOut();
+		            	window.location.replace("main");
 		            }
 		            else if(status=="error"){
-		            	throwError('Something is Wrong!!!','<p>Failed to send the Message!</p>');
+		            	throwError('Something is Wrong!!!',"<p>Sorry we can't let you in!</p>");
 		            	button.prop("disabled",false);
 		        		button.parent().children('i').fadeOut();
 		            }
