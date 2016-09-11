@@ -23,7 +23,7 @@ import co.miraclelab.webframe.utilities.LogService;
 import co.miraclelab.webframe.utilities.ServiceAccessor;
 import co.miraclelab.webframe.utilities.XMLService;
 import co.miraclelab.wikikit.model.User;
-import co.miraclelab.wikikit.model.UserRepository;
+import co.miraclelab.wikikit.repository.UserRepository;
 
 @Controller
 public class Control extends MainControl{
