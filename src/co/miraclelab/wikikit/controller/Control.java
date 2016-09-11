@@ -27,16 +27,18 @@ import co.miraclelab.wikikit.model.UserRepository;
 
 @Controller
 public class Control extends MainControl{
-	@Autowired UserRepository userRepository;
+	private final UserRepository userRepository;
 
 	
 	public Control(AppProperties properties, ServletContext servletContext, LogService logService,
 			EncryptService encryptService, XMLService xmlService, EmailService mailService, MongoTemplate mongoTemplate,
 			LayoutService layoutService, VelocityEngine templateEngine, HttpServletRequest request,
-			HttpServletResponse response) {
+			HttpServletResponse response,
+			UserRepository userRepository) {
 		super(properties, servletContext, logService, encryptService, xmlService, mailService, mongoTemplate, layoutService,
 				templateEngine, request, response);
 		mailService.initMailService();
+		this.userRepository=userRepository;
 	}
 
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET) 
