@@ -1,9 +1,9 @@
 <li class="dropdown">
 	  <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
-	  role="button" aria-haspopup="true" aria-expanded="false">$myPanel.getLabel() <span class="caret"></span></a>
+	  role="button" aria-haspopup="true" aria-expanded="false">$panel.getLabel() <span class="caret"></span></a>
 	  <ul class="dropdown-menu">
-	  	$layoutService.in($myPanel.getSection())
+	  	$layoutService.in($panel.getSection())
 		$layoutService.renderLinks("<li>?</li>")
-		$layoutService.up($myPanel.getSection())
+		$layoutService.up($panel.getSection())
 	  </ul>
 </li>
