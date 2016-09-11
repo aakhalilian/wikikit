@@ -28,7 +28,6 @@ import co.miraclelab.wikikit.model.UserRepository;
 @Controller
 public class Control extends MainControl{
 	private final UserRepository userRepository;
-
 	
 	public Control(AppProperties properties, ServletContext servletContext, LogService logService,
 			EncryptService encryptService, XMLService xmlService, EmailService mailService, MongoTemplate mongoTemplate,
