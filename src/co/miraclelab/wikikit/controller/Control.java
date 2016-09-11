@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.velocity.app.VelocityEngine;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,9 +22,14 @@ import co.miraclelab.webframe.utilities.EncryptService;
 import co.miraclelab.webframe.utilities.LogService;
 import co.miraclelab.webframe.utilities.ServiceAccessor;
 import co.miraclelab.webframe.utilities.XMLService;
+import co.miraclelab.wikikit.model.User;
+import co.miraclelab.wikikit.model.UserRepository;
 
 @Controller
 public class Control extends MainControl{
+	@Autowired UserRepository userRepository;
+
+	
 	public Control(AppProperties properties, ServletContext servletContext, LogService logService,
 			EncryptService encryptService, XMLService xmlService, EmailService mailService, MongoTemplate mongoTemplate,
 			LayoutService layoutService, VelocityEngine templateEngine, HttpServletRequest request,
@@ -55,7 +61,17 @@ public class Control extends MainControl{
 	@RequestMapping(value = { "/login" }, method = RequestMethod.POST)
 	@ResponseBody
 	public String loginPageResponse(){
-		return request.getParameter("email")+" "+request.getParameter("password");
+		String username=request.getParameter("email");
+		return userRepository.findByUsername(username).size()+" "+userRepository.findAll().size();
+	}
+	
+	@RequestMapping(value = { "/createUser" }, method = RequestMethod.GET)
+	public String createUser() throws IOException {
+		User user=new User();
+		user.setPassword("12345");
+		user.setUsername(request.getParameter("name"));
+		mongoTemplate.save(user);
+		return "redirect:/main";
 	}
 
 }

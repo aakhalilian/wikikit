@@ -31,4 +31,8 @@
 		<resource type="js" location="js/contact.js"/>
 	</web-resource>
 	
+	<web-resource key="login-js" context="master">
+		<resource type="js" location="js/login.js"/>
+	</web-resource>
+	
 </web-resource-service>

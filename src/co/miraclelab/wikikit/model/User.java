@@ -1,12 +1,7 @@
 package co.miraclelab.wikikit.model;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
-@Document
-public class User {
-	@Id
-	public String id;
+public class User extends Storable {
+	
 	private String username;
 	private String password;
 	private UserInfo userInfo;
