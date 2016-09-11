@@ -1,5 +1,6 @@
 package co.miraclelab.wikikit.controller;
 import java.io.IOException;
+import java.security.GeneralSecurityException;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -24,20 +25,21 @@ import co.miraclelab.webframe.utilities.ServiceAccessor;
 import co.miraclelab.webframe.utilities.XMLService;
 import co.miraclelab.wikikit.model.User;
 import co.miraclelab.wikikit.repository.UserRepository;
+import co.miraclelab.wikikit.services.UserService;
 
 @Controller
 public class Control extends MainControl{
-	private final UserRepository userRepository;
+	private final UserService userService;
 	
 	public Control(AppProperties properties, ServletContext servletContext, LogService logService,
 			EncryptService encryptService, XMLService xmlService, EmailService mailService, MongoTemplate mongoTemplate,
 			LayoutService layoutService, VelocityEngine templateEngine, HttpServletRequest request,
 			HttpServletResponse response,
-			UserRepository userRepository) {
+			UserService userService) {
 		super(properties, servletContext, logService, encryptService, xmlService, mailService, mongoTemplate, layoutService,
 				templateEngine, request, response);
 		mailService.initMailService();
-		this.userRepository=userRepository;
+		this.userService=userService;
 	}
 
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET) 
@@ -63,15 +65,37 @@ public class Control extends MainControl{
 	@ResponseBody
 	public String loginPageResponse(){
 		String username=request.getParameter("email");
-		return userRepository.findByUsername(username).size()+" "+userRepository.findAll().size();
+		String password=request.getParameter("password");
+		try {
+			if(userService.login(username, password))
+				 return "success";
+			else return "error";
+		} catch (Throwable e) {
+			return "error";
+		}
+	}
+	
+	@RequestMapping(value = { "/logout" }, method = RequestMethod.GET) 
+	public String logout() throws IOException {
+		userService.logout();
+		return "redirect:/main";
 	}
 	
 	@RequestMapping(value = { "/createUser" }, method = RequestMethod.GET)
 	public String createUser() throws IOException {
 		User user=new User();
-		user.setPassword("12345");
+		try {
+			user.setPassword(request.getParameter("password"));
+		} catch (GeneralSecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		user.setUsername(request.getParameter("name"));
-		mongoTemplate.save(user);
+		try {
+			userService.createUser(user);
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
 		return "redirect:/main";
 	}
 
