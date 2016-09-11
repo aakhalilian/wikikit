@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.velocity.app.VelocityEngine;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,7 +23,7 @@ import co.miraclelab.webframe.utilities.LogService;
 import co.miraclelab.webframe.utilities.ServiceAccessor;
 import co.miraclelab.webframe.utilities.XMLService;
 import co.miraclelab.wikikit.model.User;
-import co.miraclelab.wikikit.repository.UserRepository;
+import co.miraclelab.wikikit.services.ComponentAccessor;
 import co.miraclelab.wikikit.services.UserService;
 
 @Controller
@@ -40,6 +39,7 @@ public class Control extends MainControl{
 				templateEngine, request, response);
 		mailService.initMailService();
 		this.userService=userService;
+		ComponentAccessor.setUserservice(userService);
 	}
 
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET) 

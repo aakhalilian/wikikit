@@ -19,6 +19,7 @@
 	<web-link location="master.top.navbar.right" order="1000">
 		<label>Login</label>
 		<link>login</link>
+		<condition>co.miraclelab.wikikit.condition.UserisNotLoggedIn</condition>
 	</web-link>
 	
 </layout-map>
