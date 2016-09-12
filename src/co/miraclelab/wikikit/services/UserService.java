@@ -16,10 +16,7 @@ public class UserService {
 	public static final String USERVAR="authenticatedUser";
 	
 	public boolean isExist(String username){
-		if(userRepository.findByUsername(username)!=null)
-			return true;
-		else
-			return false;
+		return(userRepository.findByUsername(username)!=null);
 	}
 	
 	public void createUser(User user) throws Throwable{

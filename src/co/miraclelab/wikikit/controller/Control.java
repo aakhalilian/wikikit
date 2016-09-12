@@ -22,24 +22,29 @@ import co.miraclelab.webframe.utilities.EncryptService;
 import co.miraclelab.webframe.utilities.LogService;
 import co.miraclelab.webframe.utilities.ServiceAccessor;
 import co.miraclelab.webframe.utilities.XMLService;
+import co.miraclelab.wikikit.model.Article;
 import co.miraclelab.wikikit.model.User;
+import co.miraclelab.wikikit.services.ArticleService;
 import co.miraclelab.wikikit.services.ComponentAccessor;
 import co.miraclelab.wikikit.services.UserService;
 
 @Controller
 public class Control extends MainControl{
 	private final UserService userService;
+	private final ArticleService articleService;
 	
 	public Control(AppProperties properties, ServletContext servletContext, LogService logService,
 			EncryptService encryptService, XMLService xmlService, EmailService mailService, MongoTemplate mongoTemplate,
 			LayoutService layoutService, VelocityEngine templateEngine, HttpServletRequest request,
 			HttpServletResponse response,
-			UserService userService) {
+			UserService userService, ArticleService articleService) {
 		super(properties, servletContext, logService, encryptService, xmlService, mailService, mongoTemplate, layoutService,
 				templateEngine, request, response);
 		mailService.initMailService();
 		this.userService=userService;
 		ComponentAccessor.setUserservice(userService);
+		this.articleService=articleService;
+		ComponentAccessor.setArticleService(articleService);
 	}
 
 	@RequestMapping(value = { "/" }, method = RequestMethod.GET) 
@@ -93,6 +98,20 @@ public class Control extends MainControl{
 		user.setUsername(request.getParameter("name"));
 		try {
 			userService.createUser(user);
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		return "redirect:/main";
+	}
+	
+	@RequestMapping(value = { "/createArticle" }, method = RequestMethod.GET)
+	public String createArticle() throws IOException {
+		Article article=new Article();
+		article.setTitle(request.getParameter("title"));
+		article.setContent("test Content");
+		article.setKey(articleService.getUniqueKey());
+		try {
+			articleService.createArticle(article);
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}
