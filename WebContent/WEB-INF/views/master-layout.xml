@@ -7,7 +7,7 @@
 	</web-panel>
 	
 	<web-panel location="create.article.main" order="1000">
-		<template>fragments/_navbar-bittom.vm</template>
+		<template>fragments/_navbar-bottom.vm</template>
 		<label>Navbar</label>
 	</web-panel>
 	
