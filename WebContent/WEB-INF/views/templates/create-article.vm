@@ -1,3 +1,5 @@
 <div class="container  WH wh-23">
-	
+	$layoutService.in("create.article.main")
+	$layoutService.renderPanels()
+	$layoutService.up(3)
 </div>
