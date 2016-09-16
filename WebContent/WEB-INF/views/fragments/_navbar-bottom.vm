@@ -21,8 +21,10 @@
 		$layoutService.renderLinks("<li>?</li>")
 		$layoutService.renderPanels()
 		$layoutService.up(3)
-		<button type="button" class="btn btn-default navbar-btn">Sign in</button>
       </ul>
+      
+      <button type="button" class="btn btn-default navbar-btn">close</button>
+      <button type="button" class="btn btn-primary navbar-btn">save</button>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
