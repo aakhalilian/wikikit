@@ -104,18 +104,11 @@ public class Control extends MainControl{
 		return "redirect:/main";
 	}
 	
-	@RequestMapping(value = { "/createArticle" }, method = RequestMethod.GET)
-	public String createArticle() throws IOException {
-		Article article=new Article();
-		article.setTitle(request.getParameter("title"));
-		article.setContent("test Content");
-		article.setKey(articleService.getUniqueKey());
-		try {
-			articleService.createArticle(article);
-		} catch (Throwable e) {
-			e.printStackTrace();
-		}
-		return "redirect:/main";
+	@RequestMapping(value = { "/create-article" }, method = RequestMethod.GET)
+	public String createArticle(Model model) throws IOException {
+		ServiceAccessor.modelDispatch(model);
+		model.addAttribute("pageTitle","Create Artile"); 
+		return "create-article";
 	}
 
 }
